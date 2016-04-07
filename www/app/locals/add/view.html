@@ -1,0 +1,38 @@
+<ion-view view-title="Agregá tu local">
+  <ion-header-bar align-title="left" class="bar-positive">
+  <div class="buttons">
+    <button class="button ion-chevron-left" ui-sref="menu.locals"></button>
+  </div>
+  <h1 class="title">Agregá tu local</h1>
+</ion-header-bar>
+  <ion-content class="padding">
+    <form name="localRegister" autocomplete="off" ng-submit="vm.registerLocal()">
+    <div class="card">
+      <div class="item item-divider">
+        Datos del local
+      </div>
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Nombre</span>
+          <input type="text" name="name" ng-model="vm.localInfo.name" required>
+        </label>
+        <label class="item" ng-show="(localRegister.name.$touched && localRegister.name.$error.required)">
+          <span class="error">Debe ingresar un nombre</span>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Dirección</span>
+          <input type="text" name="address" ng-model="vm.localInfo.address" required>
+        </label>
+        <label class="item" ng-show="(localRegister.address.$touched && localRegister.address.$error.required)">
+          <span class="error">Debe ingresar una dirección física</span>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Teléfono</span>
+          <input type="tel" name="telephone" ng-model="vm.localInfo.telephone">
+        </label>
+      </div>
+    </div>
+    <button class="button button-block button-assertive" type="submit" on-click="vm.registerLocal()" ng-disabled="localRegister.$invalid">Registrar</button>
+  </form>
+  </ion-content>
+</ion-view>

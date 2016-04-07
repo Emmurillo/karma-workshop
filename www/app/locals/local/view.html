@@ -1,0 +1,28 @@
+<ion-view view-title="Ahora suena">
+  <ion-header-bar align-title="left" class="bar-positive">
+    <div class="buttons">
+      <button class="button ion-chevron-left" ui-sref="menu.locals" ng-click="vm.killPlayer(false)"></button>
+    </div>
+    <h1 class="title">Ahora suena</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list card">
+
+      <div class="item item-image video-container">
+        <div id="player"></div>
+      </div>
+
+      <button class="item item-icon-left assertive" ng-click="vm.playQueue(true)" ng-hide="vm.isPlaying">
+        <i class="icon ion-music-note"></i>
+        Reproducir lista de canciones
+      </button>
+
+    </div>
+    <div class="list">
+      <a class="item" ng-repeat="video in vm.queue">
+        <h2>{{ video.name }}</h2>
+        <p>{{ video.description }}</p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,14 @@
+<ion-view view-title="Mis Locales">
+  <ion-nav-buttons side="right">
+    <button class="button icon ion-plus" ui-sref="add"></button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ul class="list">
+      <li class="item" ng-repeat="local in vm.locals" ng-click="vm.goToLocal(local)">
+        <h2>{{ local.name }}</h2>
+        <p> {{ local.address }}</p>
+        <p> {{ local.telephone }}</p>
+      </li>
+    </ul>
+  </ion-content>
+</ion-view>

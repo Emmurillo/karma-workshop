@@ -1,0 +1,27 @@
+<ion-view view-title="Iniciar sesión">
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Iniciar Sesión</h1>
+  </ion-header-bar>
+  <ion-content class="padding-top">
+    <form name="login" autocomplete="off" ng-submit="vm.authenticate()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" name="email" ng-model="vm.user.email" required>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Contraseña</span>
+          <input type="password" name="password" ng-model="vm.user.password" required>
+        </label>
+        <label class="item">
+          <button class="button button-block button-dark" type="submit" on-click="vm.authenticate()" ng-disabled="login.$invalid">Iniciar Sesión</button>
+        </label>
+      </div>
+    </form>
+    <div class="padding">
+      <!-- Facebook login is implemented but hidden until saving locals and aditional info with Facebook is implemented -->
+      <!-- <a href="" class="button button-block button-positive icon-left ion-social-facebook" ng-click="vm.authWithFacebook()">Facebook</a> -->
+      <a ui-sref="register" class="button button-block button-positive">Crea tu cuenta</a>
+    </div>
+  </ion-content>
+</ion-view>
